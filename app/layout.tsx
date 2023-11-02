@@ -1,9 +1,9 @@
-import type { Metadata } from 'next'
+import { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Head from 'next/head'
 import Header from './components/Header'
 import { ThemeProvider } from './components/ThemeProvider'
+import ClientProviders from './components/ui/ClientProvider'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,6 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClientProviders>
     <html lang="en">
       <body className={inter.className}>
         <ThemeProvider
@@ -26,11 +27,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-       
-        <Header/>
+             <Header/>
+
         {children}
         </ThemeProvider>
         </body>
     </html>
+    </ClientProviders>
   )
 }
