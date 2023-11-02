@@ -1,3 +1,4 @@
+"use client"; 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -7,8 +8,8 @@ export default function UserAvatar({
   image,
   className,
 }: {
-  name?: string;
-  image?: string;
+  name?: string |null;
+  image?: string |null;
   className?: string;
 }) {
   return (
@@ -16,14 +17,13 @@ export default function UserAvatar({
       {image && (
         <Image 
         src={image|| ""}
-        alt={name||""}
+        alt={name||" User name"}
         width={40}
         height={40}
         className="rounded-full"
         
         />
       ) }
-      {/* <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" /> */}
       <AvatarFallback className="dark:bg-white dark:text-black text-lg" delayMs={1000}>
         {name
           ?.split(" ")
