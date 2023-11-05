@@ -18,7 +18,7 @@ function CreatChatButton() {
     }
 
   return (
-   <Button variant={"ghost"}><LucideMessageSquarePlus/></Button>
+   <Button className='text-black dark:text-white' variant={"ghost"}><LucideMessageSquarePlus/></Button>
   )
 }
 
