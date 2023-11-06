@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 
 
 
-function CreatChatButton() {
+function CreateChatButton() {
 
     const router =useRouter();
 
@@ -22,4 +22,4 @@ function CreatChatButton() {
   )
 }
 
-export default CreatChatButton;
+export default CreateChatButton;
