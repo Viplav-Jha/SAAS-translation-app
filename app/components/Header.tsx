@@ -7,12 +7,12 @@ import UserButton from "./UserButton";
 import { authOptions } from "@/auth";
 import Link from "next/link";
 import { MessageSquareIcon } from "lucide-react";
-import CreatChatButton from "./CreatChatButton";
+import CreatChatButton from "./CreateChatButton";
 
 
 async function Header() {
   const session = await getServerSession(authOptions);
-  console.log(session);
+
 
   return (
     <header className="sticky top-0 z-50 dark:bg-gray-900">

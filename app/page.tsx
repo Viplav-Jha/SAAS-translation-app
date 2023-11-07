@@ -1,9 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import DemoGif from "../app/images/landingPage/demo.png";
-import PricingPage from "./components/PricingCards";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/auth";
 
-export default function Home() {
+
+export default async function Home() {
+  const session = await getServerSession(authOptions);
+
+  console.log("-------------session----------",session)
+
   return (
     <main className="">
       <div className="relavtive isolate pt-14 dark:bg-gray-900">
@@ -62,11 +68,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-          <div className="flow-root bg-white pb-24 sm:pb-32">
-            <div className="-mt-80">
-              <PricingPage redirect={true} />
-            </div>
-          </div>
       </div>
     </main>
   );
