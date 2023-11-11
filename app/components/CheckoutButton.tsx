@@ -5,13 +5,13 @@ import React, { useState } from "react";
 
 function CheckoutButton() {
   const { data: session } = useSession();
-  const [loading, setLoading] =useState(false)
+  const [loading, setLoading] = useState(false);
 
   const createCheckoutSession = async () => {
     if (!session) return;
     // push a document into firestore db
 
-    setLoading(true)
+    setLoading(true);
 
     // .. strip extension on firebase will create a checkout session
 
