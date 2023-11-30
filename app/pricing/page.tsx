@@ -35,18 +35,17 @@ function PricingPage({ redirect }: { redirect: boolean }) {
             <defs>
               <radialGradient id="radial-gradient-pricing">
                 <stop stopColor="#7775D6" />
-                  <stop offset={1} stopColor="#E935C1" />
-             
+                <stop offset={1} stopColor="#E935C1" />
               </radialGradient>
             </defs>
           </svg>
         </div>
       </div>
       <div className="flow-root bg-white pb-24 sm:pb-32">
-            <div className="-mt-80">
-              <PricingCard redirect={true} />
-            </div>
-          </div>
+        <div className="-mt-80">
+          <PricingCard redirect={true} />
+        </div>
+      </div>
     </div>
   );
 }
