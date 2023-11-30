@@ -1,5 +1,7 @@
 "use client";
 
+import { db } from "@/firebase";
+import { addDoc, collection } from "firebase/firestore";
 import { useSession } from "next-auth/react";
 import React, { useState } from "react";
 
@@ -12,6 +14,13 @@ function CheckoutButton() {
     // push a document into firestore db
 
     setLoading(true);
+      
+    const docref = await addDoc(collection(db,'customers',session.user.id),{
+       price:"price_10098",
+       sucess_url:window.location.origin,
+       cancle_url:window.location.origin,
+    })
+   
 
     // .. strip extension on firebase will create a checkout session
 
